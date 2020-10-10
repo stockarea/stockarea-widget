@@ -1,29 +1,30 @@
 import html from './stockarea.html';
 import './stockarea.css';
 import { resolve } from 'path';
+import widget_js from '!!raw-loader!./searchWarehouse.js';
 
 
 let elements = [];
 let body;
+
+
+
 
 export function display() {
     // convert plain HTML string into DOM elements
     
     let temporary = document.createElement('div');
     temporary.innerHTML = html;
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = resolve('./searchWarehouse.js');
-
-
+    
+    let script = document.createElement('script');
+    script.innerHTML = widget_js;
+   
+ 
     // append elements to body
     body = document.getElementsByTagName('body')[0];
-    while (temporary.children.length > 0) {
-        elements.push(temporary.children[0]);
-        body.appendChild(temporary.children[0]);
-    }
+    body.appendChild(temporary);
     body.appendChild(script)
-    console.log(body)
+    
     
     
 }
