@@ -9,7 +9,7 @@ module.exports = (env) => {
     return [{
         entry: './src/main.js',
         output: {
-            filename: 'widget.js',
+            filename: 'sa_widget.js',
             path: path.resolve(bundleOutputDir),
         },
         devServer: {
