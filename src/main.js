@@ -1,5 +1,5 @@
 import { ping } from './services'
-import { show } from './views/message'
+import { display } from './views/stockarea'
 
 const supportedAPI = ['init', 'message']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
 
@@ -49,7 +49,7 @@ function apiHandler(api, params) {
     switch (api) {
         // TODO: add API implementation
         case 'message':
-            show(params);
+            display(params);
             break;
         default:
             console.warn(`No handler defined for ${api}`);
